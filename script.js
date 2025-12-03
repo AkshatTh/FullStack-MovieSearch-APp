@@ -42,15 +42,44 @@ function returnMovies(url){
     });
 }
 
+function debounce(func, delay) {
+    let timeoutId;
+    
+
+    return function(...args) { 
+        clearTimeout(timeoutId); 
+        
+
+        timeoutId = setTimeout(() => {
+
+            func.apply(this, args); 
+        }, delay);
+    };
+}
+
+
+const searchLogic = (searchItem) => {
+    main.innerHTML = ''; 
+
+    if(searchItem) {
+
+        returnMovies(SEARCHAPI + searchItem);
+    } else {
+        returnMovies(APILINK);
+    }
+};
+
+
+const debouncedSearch = debounce(searchLogic, 300);
+
+form.addEventListener("input" , (e) => {
+    const searchItem = search.value;
+    
+    debouncedSearch(searchItem); 
+});
 
 form.addEventListener("submit" , (e) => {
     e.preventDefault();
-    main.innerHTML = '';
+    search.value = '';
 
-    const searchItem = search.value;
-
-    if(searchItem) {
-        returnMovies(SEARCHAPI + searchItem);
-        search.value = '';
-    }
 });
