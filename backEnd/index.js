@@ -4,7 +4,7 @@ import ReviewsDAO from './dao/reviewsDAO.js'
 
 const MongoClient = mongodb.MongoClient
 
-const uri = `mongodb+srv://at6710:tgt1234567@cluster0.rr0huvs.mongodb.net/?appName=Cluster0`
+const uri = `mongodb+srv://<user>:<password>@cluster0.rr0huvs.mongodb.net/?appName=Cluster0`
 const port = 8000
 
 MongoClient.connect(
