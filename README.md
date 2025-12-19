@@ -1,6 +1,7 @@
 # FullStack MovieSearch App
 
-This repository is a simple Full-Stack Movie Search application (built while following FreeCodeCamp's FullStack course). It includes a small Express backend for storing and serving movie reviews and a static frontend that discovers movies using TheMovieDB.
+A dynamic movie discovery engine leveraging the TMDB API to fetch real-time data, featuring server-side rendering with Express.js.
+
 
 **What this project contains**
 - **Backend**: `backEnd/` — Express app that exposes a reviews API and connects to MongoDB.
